@@ -1,3 +1,4 @@
+import { Sparkles, ArrowUpRight } from "lucide-react";
 // Import the React hooks used by the page.
 import { useEffect, useState } from "react";
 
@@ -82,7 +83,7 @@ useEffect(() => {
           <a href="#services" onClick={() => setMenuOpen(false)}>SERVICES</a>
           <a href="#gallery" onClick={() => setMenuOpen(false)}>PORTFOLIO</a>
           <a className="nav-appointment" href="#contact" onClick={() => setMenuOpen(false)}>
-            BOOK A CONSULTATION ↗
+            BOOK A CONSULTATION <ArrowUpRight size={18} strokeWidth={1.5} />
           </a>
         </nav>
       </header>
@@ -119,7 +120,7 @@ useEffect(() => {
 
           <a className="hero-cta" href="#services">
             <span>DISCOVER YOUR RITUAL</span>
-            <span className="cta-arrow">↗</span>
+            <span className="cta-arrow"><ArrowUpRight size={18} strokeWidth={1.5} /></span>
           </a>
 
           <div className="hero-index">
@@ -147,7 +148,7 @@ useEffect(() => {
           </div>
 
           <div className="floating-note">
-            <span className="note-star">✳</span>
+            <span className="note-star"><Sparkles size={16} strokeWidth={1.5} /></span>
             <span>YOUR BEAUTY,</span>
             <span>YOUR RULES.</span>
           </div>
@@ -168,7 +169,7 @@ useEffect(() => {
         <p className="eyebrow">A DIFFERENT KIND OF BEAUTY HOUSE</p>
 
         <div className="story-v2-layout">
-          <span className="story-v2-mark" aria-hidden="true">✳</span>
+          <span className="story-v2-mark" aria-hidden="true"><Sparkles size={16} strokeWidth={1.5} /></span>
 
           <h2>
             Beauty isn't
@@ -186,7 +187,7 @@ useEffect(() => {
               unexpected magic make every appointment personal.
             </p>
             <a href="#services" className="text-link">
-              DISCOVER OUR APPROACH <span>↗</span>
+              DISCOVER OUR APPROACH <span><ArrowUpRight size={18} strokeWidth={1.5} /></span>
             </a>
           </div>
         </div>
@@ -214,7 +215,7 @@ useEffect(() => {
                 loading="lazy"
               />
               <span className="service-v2-index">01</span>
-              <span className="service-v2-arrow">↗</span>
+              <span className="service-v2-arrow"><ArrowUpRight size={18} strokeWidth={1.5} /></span>
             </div>
             <p className="service-v2-kicker">THE EVERYDAY EDIT</p>
             <h3>Beauty rituals</h3>
@@ -231,7 +232,7 @@ useEffect(() => {
                 loading="lazy"
               />
               <span className="service-v2-index">02</span>
-              <span className="service-v2-arrow">↗</span>
+              <span className="service-v2-arrow"><ArrowUpRight size={18} strokeWidth={1.5} /></span>
             </div>
             <p className="service-v2-kicker">MADE FOR YOUR MOMENT</p>
             <h3>Occasion artistry</h3>
@@ -248,7 +249,7 @@ useEffect(() => {
                 loading="lazy"
               />
               <span className="service-v2-index">03</span>
-              <span className="service-v2-arrow">↗</span>
+              <span className="service-v2-arrow"><ArrowUpRight size={18} strokeWidth={1.5} /></span>
             </div>
             <p className="service-v2-kicker">YOUR ONCE-UPON-A-TIME</p>
             <h3>Bridal beauty</h3>
@@ -309,7 +310,7 @@ useEffect(() => {
           </figure>
 
           <div className="gallery-v2-aside">
-            <span className="gallery-v2-star">✳</span>
+            <span className="gallery-v2-star"><Sparkles size={16} strokeWidth={1.5} /></span>
             <p>Not a mask.</p>
             <p><em>A little more you.</em></p>
             <span className="gallery-v2-aside-note">THE ORCHID NOIR POINT OF VIEW</span>
@@ -320,7 +321,7 @@ useEffect(() => {
       {/* Closing section: the primary enquiry action. */}
       <footer className="orchid-footer-v2" id="contact">
         <p className="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
-        <span className="footer-v2-star" aria-hidden="true">✳</span>
+        <span className="footer-v2-star" aria-hidden="true"><Sparkles size={16} strokeWidth={1.5} /></span>
         <h2>
           Let's create
           <br />
@@ -335,7 +336,7 @@ useEffect(() => {
           target="_blank"
           rel="noreferrer"
         >
-          START A CONVERSATION <span>↗</span>
+          START A CONVERSATION <span><ArrowUpRight size={18} strokeWidth={1.5} /></span>
         </a>
 
         <div className="footer-v2-bottom">
