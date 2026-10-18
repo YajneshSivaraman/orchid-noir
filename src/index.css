@@ -2628,3 +2628,150 @@ a:focus-visible {
 .orchid-nav > * {
   align-self: center;
 }
+
+/* ORCHID NOIR — align portfolio images on mobile */
+@media (max-width: 600px) {
+  /* Keep the gallery columns consistent. */
+  .gallery-v2-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  /* Give every gallery image a consistent shape. */
+  .gallery-v2-item {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+  }
+
+  /* Fill each image frame without stretching the photo. */
+  .gallery-v2-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+/* ORCHID NOIR — consistent mobile gallery layout */
+@media (max-width: 600px) {
+  /* Arrange the three photos in a clean, equal-width grid. */
+  .orchid-gallery-v2 .gallery-v2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    align-items: start;
+    gap: 24px 12px;
+  }
+
+  /* Remove desktop-specific grid placement and offsets. */
+  .orchid-gallery-v2 .gallery-v2-item,
+  .orchid-gallery-v2 .gallery-v2-large,
+  .orchid-gallery-v2 .gallery-v2-small,
+  .orchid-gallery-v2 .gallery-v2-bottom {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    align-self: start;
+  }
+
+  /* Give all three photos exactly the same portrait proportions. */
+  .orchid-gallery-v2 .gallery-v2-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Keep captions aligned beneath their photos. */
+  .orchid-gallery-v2 .gallery-v2-item figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  /* Place the editorial text beneath the photo grid. */
+  .orchid-gallery-v2 .gallery-v2-aside {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    width: 100%;
+    min-width: 0;
+    margin: 12px 0 0;
+  }
+}
+
+/* ORCHID NOIR — full-width mobile gallery */
+@media (max-width: 600px) {
+  /* Stack gallery items vertically and use the available width. */
+  .orchid-gallery-v2 .gallery-v2-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  /* Expand each photo to the full gallery width. */
+  .orchid-gallery-v2 .gallery-v2-item,
+  .orchid-gallery-v2 .gallery-v2-large,
+  .orchid-gallery-v2 .gallery-v2-small,
+  .orchid-gallery-v2 .gallery-v2-bottom {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  /* Make each portrait large and consistent without stretching it. */
+  .orchid-gallery-v2 .gallery-v2-item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Keep the editorial text beneath all three photos. */
+  .orchid-gallery-v2 .gallery-v2-aside {
+    width: 100%;
+    margin: 8px 0 0;
+  }
+}
+
+/* Prevent gallery captions from being cut off on mobile. */
+@media (max-width: 600px) {
+  .orchid-gallery-v2 .gallery-v2-item {
+    height: auto;
+    overflow: visible;
+  }
+
+  .orchid-gallery-v2 .gallery-v2-item figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    white-space: normal;
+    padding-bottom: 4px;
+  }
+
+  /* Let both caption lines wrap naturally. */
+  .orchid-gallery-v2 .gallery-v2-item figcaption span {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: visible;
+    white-space: normal;
+    line-height: 1.5;
+  }
+}
