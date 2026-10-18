@@ -231,7 +231,7 @@ useEffect(() => {
                 alt="Elegant editorial portrait in soft natural light"
                 loading="lazy"
               />
-              <span className="service-v2-index">02</span>
+              
               <span className="service-v2-arrow"><ArrowUpRight size={18} strokeWidth={1.5} /></span>
             </div>
             <p className="service-v2-kicker">MADE FOR YOUR MOMENT</p>
@@ -332,7 +332,7 @@ useEffect(() => {
         {/* Replace this placeholder URL with the studio's real WhatsApp link. */}
         <a
           className="footer-v2-cta"
-          href="https://wa.me/"
+          href="https://wa.me/917010508392"
           target="_blank"
           rel="noreferrer"
         >

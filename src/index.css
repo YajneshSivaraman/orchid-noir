@@ -913,12 +913,21 @@ a:focus-visible {
   margin-bottom: 25px;
 }
 
+/* Override the old rotation with a gentle floating effect. */
 .footer-v2-star {
-  display: block;
-  margin-bottom: 15px;
-  color: var(--mulberry);
-  font-size: 34px;
-  animation: slow-turn 20s linear infinite;
+  animation: star-float 3s ease-in-out infinite !important;
+  transform-origin: center;
+}
+
+/* Float up and down without rotating. */
+@keyframes star-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(0deg);
+  }
 }
 
 .orchid-footer-v2 h2 {
@@ -2396,4 +2405,226 @@ a:focus-visible {
 .hero-portrait.portrait-replay {
   animation: orchid-portrait-arrive 1.4s
     cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+
+/* =========================================================
+   ORCHID NOIR — FINAL MOBILE ALIGNMENT FIX
+   Add this at the very bottom of index.css.
+   Keeps the existing design while correcting mobile layout.
+   ========================================================= */
+
+@media (max-width: 600px) {
+  /* Prevent sections from exceeding the available screen width. */
+  .orchid-site,
+  .orchid-story-v2,
+  .orchid-services-v2,
+  .orchid-gallery-v2,
+  .orchid-footer-v2 {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Keep the navigation aligned and the menu within the viewport. */
+  .orchid-nav {
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px 5%;
+  }
+
+  .orchid-links {
+    right: 5%;
+    left: 5%;
+    max-width: 90%;
+  }
+
+  /* Prevent oversized hero text and decorative elements from
+     creating horizontal overflow on narrow phones. */
+  .orchid-hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+
+  .hero-copy,
+  .hero-title,
+  .hero-description {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 13vw, 76px);
+    overflow-wrap: normal;
+  }
+
+  .hero-visual {
+    width: min(88%, 430px);
+    max-width: 100%;
+  }
+
+  .floating-note {
+    right: -4%;
+  }
+
+  .vertical-note {
+    right: -3%;
+  }
+
+  /* Keep the story heading and copy aligned to one column. */
+  .story-v2-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .story-v2-copy,
+  .story-v2-description {
+    grid-column: 1;
+    max-width: 100%;
+  }
+
+  /* Keep service cards aligned without the desktop offset. */
+  .service-v2-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-v2-card,
+  .service-v2-card-offset {
+    width: 100%;
+    max-width: 440px;
+    margin-top: 0;
+    justify-self: stretch;
+  }
+
+  .service-v2-image {
+    width: 100%;
+  }
+
+  /* Use a balanced two-column gallery on mobile.
+     Each image stays inside its own grid cell. */
+  .gallery-v2-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 28px 14px;
+  }
+
+  .gallery-v2-large {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .gallery-v2-small {
+    grid-column: 2;
+    grid-row: auto;
+    margin-top: 24px;
+  }
+
+  .gallery-v2-bottom {
+    grid-column: 2;
+    grid-row: auto;
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+  }
+
+  .gallery-v2-aside {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    width: 100%;
+    min-width: 0;
+    margin-top: 10px;
+  }
+
+  .gallery-v2-item,
+  .gallery-v2-item img,
+  .gallery-v2-item figcaption {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .gallery-v2-item figcaption {
+    overflow-wrap: anywhere;
+  }
+
+  /* Stop the footer row from pushing beyond the screen. */
+  .footer-v2-bottom {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-v2-cta {
+    max-width: 100%;
+    gap: 12px;
+    padding-right: 14px;
+    padding-left: 14px;
+    font-size: 8px;
+  }
+}
+
+/* Extra-small phones. */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .orchid-story-v2,
+  .orchid-services-v2,
+  .orchid-gallery-v2,
+  .orchid-footer-v2 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .gallery-v2-grid {
+    gap: 24px 10px;
+  }
+}
+/* Keep the appointment text and arrow on the same line. */
+.orchid-links .nav-appointment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* Prevent the arrow icon from shrinking or wrapping. */
+.orchid-links .nav-appointment svg {
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Keep the navbar visible while scrolling. */
+.orchid-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Keep the fixed navbar readable over every section. */
+.orchid-nav {
+  background: rgba(247, 240, 245, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 20px rgba(40, 33, 45, 0.06);
+}
+
+/* Reduce the fixed navbar's height and padding. */
+.orchid-nav {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Keep the logo and navigation items neatly aligned. */
+.orchid-nav > * {
+  align-self: center;
 }
