@@ -1,0 +1,38 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- ORCHID NOIR — editorial luxury monogram favicon. -->
+
+  <defs>
+    <!-- Soft background keeps the emblem visible in browser tabs. -->
+    <linearGradient id="ivory" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbf7fa"/>
+      <stop offset="100%" stop-color="#eadce9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded medallion with a fine double border. -->
+  <rect x="5" y="5" width="118" height="118" rx="59" fill="url(#ivory)"/>
+  <circle cx="64" cy="64" r="53" fill="none" stroke="#71546f" stroke-width="1"/>
+  <circle cx="64" cy="64" r="48" fill="none" stroke="#b79acb" stroke-width=".7"/>
+
+  <!-- Abstract orchid-inspired flourish above the monogram. -->
+  <g fill="none" stroke="#71546f" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 45 C49 35 53 23 64 19 C75 26 78 37 64 45Z" stroke-width="1.5"/>
+    <path d="M64 43 C56 35 58 28 64 24" stroke="#b79acb" stroke-width="1.2"/>
+    <path d="M64 44 C72 36 77 35 83 37" stroke-width="1.2"/>
+    <path d="M64 44 C56 43 50 40 46 35" stroke-width="1.2"/>
+  </g>
+
+  <!-- Refined ON monogram using clean, readable geometry. -->
+  <g fill="none" stroke="#28212d" stroke-linecap="round" stroke-linejoin="round">
+    <!-- O: elegant oval letterform. -->
+    <ellipse cx="48" cy="70" rx="13" ry="19" stroke-width="2.4"/>
+
+    <!-- N: tall editorial strokes with a diagonal connector. -->
+    <path d="M67 88 V52 L91 88 V52" stroke-width="2.4"/>
+  </g>
+
+  <!-- Small centered ornamental divider. -->
+  <path d="M51 101 H77" stroke="#71546f" stroke-width="1"/>
+  <circle cx="64" cy="101" r="2" fill="#b79acb"/>
+</svg>
